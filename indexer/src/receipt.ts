@@ -1,12 +1,14 @@
-import { CONFIG } from './config';
-import axios from 'axios';
-import { ethers } from 'ethers';
-
+import axios from "axios";
+import { CONFIG } from "./config";
 
 export async function storeReceipt(receipt: any) {
-const data = JSON.stringify(receipt);
-const res = await axios.post(CONFIG.IPFS_API, data, {
-headers: { 'Content-Type': 'application/json' }
-});
-return res.data;
+  const response = await axios.post(
+    CONFIG.IPFS_API,
+    JSON.stringify(receipt),
+    {
+      headers: { "Content-Type": "application/json" }
+    }
+  );
+
+  return response.data;
 }
