@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 189 85% 55%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 189 85% 55%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 189 85% 55%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 189 85% 55%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 189 85% 55%;
+
+    /* Custom Web3 variables */
+    --aurora-start: 189 85% 55%;
+    --aurora-mid: 217 91% 60%;
+    --aurora-end: 270 70% 60%;
+    
+    --glass-bg: 222 47% 8% / 0.4;
+    --glass-border: 189 85% 55% / 0.2;
+    
+    --glow: 189 85% 55% / 0.3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at top, hsl(var(--aurora-start) / 0.15), transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(var(--aurora-end) / 0.1), transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+  
+  .glow-border {
+    @apply border border-primary/30 shadow-[0_0_30px_-5px] shadow-primary/20;
+  }
+  
+  .aurora-text {
+    @apply bg-gradient-to-r from-primary via-[hsl(var(--aurora-mid))] to-[hsl(var(--aurora-end))] bg-clip-text text-transparent;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10;
+  }
+}
