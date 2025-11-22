@@ -1,0 +1,13 @@
+{
+  "name": "stratosproof-sdk",
+  "version": "1.0.0",
+  "description": "SDK for verifying StratosProof cryptographic receipts",
+  "main": "src/verify.ts",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "ethers": "^6.6.0",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.0"
+  }
+}
