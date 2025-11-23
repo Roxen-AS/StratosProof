@@ -92,7 +92,7 @@ const Landing = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 py-8 mt-24">
         <div className="container mx-auto px-6 text-center text-muted-foreground">
-          <p>© 2024 StratosProof. Built for the future of Web3.</p>
+          <p>© 2025 StratosProof. Built for the future of Web3.</p>
         </div>
       </footer>
     </div>
